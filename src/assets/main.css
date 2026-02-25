@@ -1,0 +1,33 @@
+:root {
+  background-color: #f4f4f5;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.img-container img {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.img-container:hover img {
+  transform: scale(1.05);
+}
+h1,
+h2,
+h3,
+.font-black {
+  font-weight: 900;
+  letter-spacing: -0.05em;
+}

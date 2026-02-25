@@ -14,9 +14,9 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: '1',
-    title: 'Identidad Visual Eco-Friendly',
+    title: 'Ilustración',
     slug: 'eco-branding',
-    category: 'Diseño Gráfico',
+    category: 'Diseño gráfico',
     description: 'Creación de marca para una startup de productos sostenibles.',
     thumbnail: 'https://via.placeholder.com/800x600',
     image: 'https://via.placeholder.com/800x600', // Luego cambias por tus fotos a 72ppp
@@ -25,15 +25,41 @@ export const projects: Project[] = [
   },
   {
     id: '2',
-    title: 'App de Gestión de Tareas',
+    title: 'Maquetación',
     slug: 'task-app',
-    category: 'Desarrollo Web',
+    category: 'Diseño editorial',
+    description: 'Interfaz reactiva construida con Vue 3 y Tailwind CSS.',
+    thumbnail: 'https://via.placeholder.com/800x600',
+    image: 'https://via.placeholder.com/800x600',
+    tags: ['Vue.js', 'TypeScript', 'UI/UX'],
+    content: 'El reto principal fue la gestión de estados complejos en tiempo real...'
+  },
+
+  {
+    id: '3',
+    title: 'Digital',
+    slug: 'task-app',
+    category: 'Diseño digital',
+    description: 'Interfaz reactiva construida con Vue 3 y Tailwind CSS.',
+    thumbnail: 'https://via.placeholder.com/800x600',
+    image: 'https://via.placeholder.com/800x600',
+    tags: ['Vue.js', 'TypeScript', 'UI/UX'],
+    content: 'El reto principal fue la gestión de estados complejos en tiempo real...'
+  },
+
+  {
+    id: '4',
+    title: 'OTRA COSA',
+    slug: 'task-app',
+    category: '???',
     description: 'Interfaz reactiva construida con Vue 3 y Tailwind CSS.',
     thumbnail: 'https://via.placeholder.com/800x600',
     image: 'https://via.placeholder.com/800x600',
     tags: ['Vue.js', 'TypeScript', 'UI/UX'],
     content: 'El reto principal fue la gestión de estados complejos en tiempo real...'
   }
+
+
 ];
 
 export const education = [

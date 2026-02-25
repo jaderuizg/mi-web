@@ -35,7 +35,7 @@ import { Menu, Github, Linkedin } from 'lucide-vue-next'
 
     <footer class="border-t bg-white py-8">
       <div class="container mx-auto px-4 text-center text-slate-500 text-sm">
-        <p>© 2026 - Mi Portafolio Profesional</p>
+        <p>© 2026 - Mi pequeño portfolio </p>
       </div>
     </footer>
   </div>
