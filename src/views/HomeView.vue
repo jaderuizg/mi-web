@@ -3,7 +3,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { projects } from '@/data/portfolio'
-import { ArrowRight, Github, Linkedin, MousePointer2 } from 'lucide-vue-next'
+import { ArrowRight, Github, Instagram, Linkedin, MousePointer2 } from 'lucide-vue-next'
 
 const isVisible = ref(false)
 
@@ -34,12 +34,12 @@ onMounted(() => {
         </h1>
 
         <p class="max-w-2xl text-xl md:text-3xl text-slate-600 font-light leading-tight mb-10">
-          Hola, soy <span class="text-black font-medium underline decoration-blue-500">Tu Nombre</span>. 
-          Construyo interfaces digitales que combinan minimalismo brutalista con funcionalidad moderna.
+          Hola, soy <span class="text-black font-medium underline decoration-pink-300">Jade</span>. 
+          Estudio Diseño y Tecnologias Creativas en la UPV. Este es mi portafolio 
         </p>
 
         <div class="flex flex-wrap gap-4">
-          <button class="px-8 py-4 bg-black text-white rounded-full font-bold hover:bg-blue-600 transition-all flex items-center gap-2 group">
+          <button class="px-8 py-4 bg-black text-white rounded-full font-bold hover:bg-pink-600 transition-all flex items-center gap-2 group">
             Ver mis trabajos 
             <ArrowRight class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
@@ -49,6 +49,9 @@ onMounted(() => {
             </a>
             <a href="#" class="p-4 bg-white border border-black/10 rounded-full hover:bg-slate-50 transition-colors">
               <Linkedin class="w-6 h-6" />
+              </a>
+            <a href="#" class="p-4 bg-white border border-black/10 rounded-full hover:bg-slate-50 transition-colors">
+              <Instagram class="w-6 h-6" />
             </a>
           </div>
         </div>
