@@ -20,7 +20,7 @@ if (!project.value) router.push('/proyectos')
 <template>
   <article v-if="project" class="max-w-4xl mx-auto space-y-8 animate-in fade-in duration-500">
     <Button variant="ghost" @click="router.back()" class="mb-4">
-      <ChevronLeft class="mr-2 h-4 w-4" /> Volver a trabajos
+      <ChevronLeft class="mr-2 h-4 w-4" /> Volver a proyectos
     </Button>
 
     <header class="space-y-4">
@@ -42,7 +42,7 @@ if (!project.value) router.push('/proyectos')
         <h3 class="font-bold text-xl">Tecnologías</h3>
         <div class="flex flex-wrap gap-2">
           <span v-for="tag in project.tags" :key="tag" 
-                class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">
+                class="px-3 py-1 bg-blue-100 text-pink-300 rounded-full text-sm font-semibold ">
             {{ tag }}
           </span>
         </div>

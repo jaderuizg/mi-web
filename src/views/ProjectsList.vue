@@ -5,8 +5,8 @@ import { projects } from '@/data/portfolio'
 <template>
   <section class="space-y-8">
     <header class="space-y-2">
-      <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">Trabajos</h1>
-      <p class="text-slate-600">Selección de proyectos recientes.</p>
+      <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">PROYECTOS</h1>
+      <p class="text-slate-600">Elige la categoria</p>
     </header>
 
     <div class="grid gap-6 md:grid-cols-2">
@@ -22,15 +22,15 @@ import { projects } from '@/data/portfolio'
         />
 
         <div class="space-y-3 p-5">
-          <p class="text-sm font-semibold text-blue-700">{{ project.category }}</p>
+          <p class="text-sm font-semibold text-pink-400">{{ project.category }}</p>
           <h2 class="text-xl font-bold">{{ project.title }}</h2>
           <p class="text-sm text-slate-600">{{ project.description }}</p>
 
           <RouterLink
             :to="`/proyectos/${project.slug}`"
-            class="inline-flex text-sm font-semibold text-blue-700 hover:text-blue-800"
+            class="inline-flex text-sm font-semibold text-pink-400 hover:text-pink-600"
           >
-            Ver detalle
+            VER
           </RouterLink>
         </div>
       </article>
