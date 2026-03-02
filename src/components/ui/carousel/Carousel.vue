@@ -4,12 +4,12 @@ import type { EmblaCarouselType, EmblaOptionsType, EmblaPluginType } from "embla
 import { ChevronLeft, ChevronRight } from "lucide-vue-next"
 import type { HTMLAttributes } from "vue"
 import { computed, onBeforeUnmount, onMounted, ref, watch } from "vue"
-import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
 
 export type CarouselApi = EmblaCarouselType
 export type CarouselOrientation = "horizontal" | "vertical"
 
-interface CarouselSlide {
+export interface CarouselSlide {
   id: string | number
   image: string
   title?: string
@@ -45,9 +45,8 @@ const emblaOptions = computed<EmblaOptionsType>(() => ({
 }))
 
 const [carouselRef, api] = emblaCarouselVue(emblaOptions, computed(() => props.plugins ?? []))
-const emblaRef = (
-  el: Element | { $el?: Element } | null,
-) => {
+
+const setEmblaRef = (el: Element | { $el?: Element } | null) => {
   if (!el) {
     carouselRef.value = undefined
     return
@@ -77,12 +76,26 @@ function scrollNext() {
 }
 
 function onKeyDown(event: KeyboardEvent) {
-  if (event.key === "ArrowLeft") {
+  if (props.orientation === "horizontal") {
+    if (event.key === "ArrowLeft") {
+      event.preventDefault()
+      scrollPrev()
+    }
+
+    if (event.key === "ArrowRight") {
+      event.preventDefault()
+      scrollNext()
+    }
+
+    return
+  }
+
+  if (event.key === "ArrowUp") {
     event.preventDefault()
     scrollPrev()
   }
 
-  if (event.key === "ArrowRight") {
+  if (event.key === "ArrowDown") {
     event.preventDefault()
     scrollNext()
   }
@@ -116,19 +129,18 @@ onBeforeUnmount(() => {
     data-slot="carousel"
     role="region"
     aria-roledescription="carousel"
-    :class="cn('relative', props.class)"
+    class="relative"
+    :class="props.class"
   >
     <div
       data-slot="carousel-content-wrapper"
       class="overflow-hidden"
-      :ref="emblaRef"
+      :ref="setEmblaRef"
     >
       <div
         data-slot="carousel-content"
-        :class="cn(
-          'flex',
-          props.orientation === 'horizontal' ? '-ml-4' : '-mt-4 flex-col',
-        )"
+        class="flex"
+        :class="props.orientation === 'horizontal' ? '-ml-4' : '-mt-4 flex-col'"
       >
         <div
           v-for="item in props.items"
@@ -136,10 +148,8 @@ onBeforeUnmount(() => {
           data-slot="carousel-item"
           role="group"
           aria-roledescription="slide"
-          :class="cn(
-            'min-w-0 shrink-0 grow-0 basis-full',
-            props.orientation === 'horizontal' ? 'pl-4' : 'pt-4',
-          )"
+          class="min-w-0 shrink-0 grow-0 basis-full"
+          :class="props.orientation === 'horizontal' ? 'pl-4' : 'pt-4'"
         >
           <slot
             name="slide"
@@ -157,26 +167,28 @@ onBeforeUnmount(() => {
       </div>
     </div>
 
-    <button
+    <Button
       data-slot="carousel-previous"
-      type="button"
-      aria-label="Previous slide"
-      class="absolute -left-4 top-1/2 z-10 inline-flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-black/20 bg-white/90 text-black transition hover:bg-white disabled:pointer-events-none disabled:opacity-40"
+      variant="outline"
+      size="icon"
+      class="absolute -left-4 top-1/2 z-10 -translate-y-1/2 rounded-full"
       :disabled="!canScrollPrev"
       @click="scrollPrev"
     >
-      <ChevronLeft class="size-5" />
-    </button>
+      <ChevronLeft class="size-4" />
+      <span class="sr-only">Previous slide</span>
+    </Button>
 
-    <button
+    <Button
       data-slot="carousel-next"
-      type="button"
-      aria-label="Next slide"
-      class="absolute -right-4 top-1/2 z-10 inline-flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-black/20 bg-white/90 text-black transition hover:bg-white disabled:pointer-events-none disabled:opacity-40"
+      variant="outline"
+      size="icon"
+      class="absolute -right-4 top-1/2 z-10 -translate-y-1/2 rounded-full"
       :disabled="!canScrollNext"
       @click="scrollNext"
     >
-      <ChevronRight class="size-5" />
-    </button>
+      <ChevronRight class="size-4" />
+      <span class="sr-only">Next slide</span>
+    </Button>
   </div>
 </template>
