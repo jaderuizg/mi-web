@@ -28,7 +28,7 @@ onMounted(() => {
             <img src="https://api.dicebear.com/7.x/notionists/svg?seed=Felix" alt="Avatar" />
           </div>
           <span class="px-4 py-1 bg-white border border-black/10 rounded-full text-xs font-bold uppercase tracking-widest">
-            Disponible para proyectos
+            Ilustración y Diseño
           </span>
         </div>
 
