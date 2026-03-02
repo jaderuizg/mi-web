@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import { projects } from '@/data/portfolio'
-import { ArrowRight, MousePointer2 } from 'lucide-vue-next'
+import { onMounted, ref } from "vue"
+import { ArrowRight, MousePointer2 } from "lucide-vue-next"
+import { projects } from "@/data/portfolio"
+import { Carousel } from "@/components/ui/carousel"
 
 const isVisible = ref(false)
 
@@ -14,43 +15,45 @@ onMounted(() => {
 
 <template>
   <div class="min-h-screen">
-    <section class="py-20 md:py-28 border-b border-black/5">
+    <section class="border-b border-black/5 py-20 md:py-28">
       <div
-        class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center transition-all duration-1000 transform"
-        :class="[isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10']"
+        class="grid grid-cols-1 items-center gap-10 transition-all duration-1000 transform lg:grid-cols-2 lg:gap-14"
+        :class="[isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0']"
       >
         <div>
           <span
-            class="inline-flex px-4 py-1 mb-6 bg-white border border-black/10 rounded-full text-xs font-bold uppercase tracking-widest"
+            class="mb-6 inline-flex rounded-full border border-black/10 bg-white px-4 py-1 text-xs font-bold uppercase tracking-widest"
           >
             Ilustracion y Diseno
           </span>
 
-          <h1 class="text-5xl md:text-7xl font-black tracking-tighter leading-[0.9] mb-6">
+          <h1 class="mb-6 text-5xl font-black leading-[0.9] tracking-tighter md:text-7xl">
             PORTAFOLIO<br />
             <span class="text-slate-400">2026</span>
           </h1>
 
-          <p class="max-w-xl text-lg md:text-2xl text-slate-600 font-light leading-tight mb-8">
-            Hola, soy <span class="text-black font-medium">Jade</span>. Estudio Diseno y Tecnologias Creativas en la UPV.
-            Aqui puedes ver una seleccion de mis proyectos.
+          <p class="mb-8 max-w-xl text-lg font-light leading-tight text-slate-600 md:text-2xl">
+            Hola, soy <span class="font-medium text-black">Jade</span>. Estudio Diseno y Tecnologias
+            Creativas en la UPV. Aqui puedes ver una seleccion de mis proyectos.
           </p>
 
           <RouterLink
             to="/proyectos"
-            class="inline-flex px-8 py-4 bg-pink-400 text-white rounded-full font-bold hover:bg-pink-600 transition-all items-center gap-2 group"
+            class="group inline-flex items-center gap-2 rounded-full bg-pink-400 px-8 py-4 font-bold text-white transition-all hover:bg-pink-600"
           >
             Ver mis proyectos
-            <ArrowRight class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight class="h-5 w-5 transition-transform group-hover:translate-x-1" />
           </RouterLink>
         </div>
 
         <div class="w-full">
-          <div class="relative overflow-hidden rounded-3xl border border-black/10 bg-slate-100 aspect-[4/5] md:aspect-[3/4] lg:aspect-square shadow-xl">
+          <div
+            class="relative aspect-[4/5] overflow-hidden rounded-3xl border border-black/10 bg-slate-100 shadow-xl md:aspect-[3/4] lg:aspect-square"
+          >
             <img
               src="https://api.dicebear.com/7.x/notionists/svg?seed=Jade"
               alt="Retrato de Jade"
-              class="w-full h-full object-cover"
+              class="h-full w-full object-cover"
             />
           </div>
         </div>
@@ -58,37 +61,43 @@ onMounted(() => {
     </section>
 
     <section class="py-20">
-      <div class="flex justify-between items-end mb-12">
+      <div class="mb-12 flex items-end justify-between">
         <h2 class="text-4xl font-bold tracking-tight text-slate-400">
           <span class="text-pink-400">CONTENIDOS</span>
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <div
-          v-for="(project, index) in projects.slice(0, 4)"
-          :key="project.id"
-          class="group cursor-pointer"
-          :style="{ transitionDelay: `${index * 100}ms` }"
-        >
-          <div class="relative aspect-video overflow-hidden rounded-3xl bg-slate-100 mb-6">
-            <div class="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/10 transition-colors z-10 flex items-center justify-center">
-              <MousePointer2 class="text-white opacity-0 group-hover:opacity-100 scale-50 group-hover:scale-100 transition-all w-12 h-12" />
+      <Carousel :items="projects.slice(0, 4)">
+        <template #slide="{ item }">
+          <RouterLink
+            :to="`/proyectos/${item.slug}`"
+            class="group block cursor-pointer"
+          >
+            <div class="relative mb-6 aspect-video overflow-hidden rounded-3xl bg-slate-100">
+              <div
+                class="absolute inset-0 z-10 flex items-center justify-center bg-blue-600/0 transition-colors group-hover:bg-blue-600/10"
+              >
+                <MousePointer2
+                  class="h-12 w-12 scale-50 text-white opacity-0 transition-all group-hover:scale-100 group-hover:opacity-100"
+                />
+              </div>
+              <img
+                :src="item.image"
+                :alt="item.title"
+                class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
             </div>
-            <img
-              :src="project.image"
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-          </div>
-          <div class="flex justify-between items-start">
-            <div>
-              <h3 class="text-2xl font-bold uppercase">{{ project.title }}</h3>
-              <p class="text-slate-500">{{ project.category }}</p>
+
+            <div class="flex items-start justify-between">
+              <div>
+                <h3 class="text-2xl font-bold uppercase">{{ item.title }}</h3>
+                <p class="text-slate-500">{{ item.category }}</p>
+              </div>
+              <span class="rounded border border-black/20 px-2 py-1 text-xs font-mono italic">2026</span>
             </div>
-            <span class="text-xs font-mono border border-black/20 px-2 py-1 rounded italic">2026</span>
-          </div>
-        </div>
-      </div>
+          </RouterLink>
+        </template>
+      </Carousel>
     </section>
   </div>
 </template>
