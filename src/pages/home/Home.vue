@@ -37,7 +37,7 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="min-h-screen">
-    <section class="border-b border-black/5 py-20 md:py-28">
+    <section class="border-b border-black/5 min-h-[85vh] py-8 md:py-12 flex items-center">
       <div
         class="grid grid-cols-1 items-center gap-10 transition-all duration-1000 transform lg:grid-cols-2 lg:gap-14"
         :class="[isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0']"
@@ -47,12 +47,14 @@ onBeforeUnmount(() => {
             Ilustracion y Diseno
           </span>
 
-          <h1 class="mb-6 text-5xl font-black leading-[0.9] tracking-tighter md:text-7xl">
+          <h1 class="mb-6 text-5xl font-black leading-[0.9] tracking-tighter md:text-7xl font-helvetica">
             PORTAFOLIO<br />
-            <span class="text-slate-400">2026</span>
+             
+
+            <span class="text-pink-400">2026</span>
           </h1>
 
-          <p class="mb-8 max-w-xl text-lg font-light leading-tight text-slate-600 md:text-2xl">
+          <p class="mb-8 max-w-xl text-lg font-light leading-tight text-slate-600 md:text-2xl font-helvetica">
             Hola, soy Jade. Estudio Diseno y Tecnologias Creativas en la UPV.
             Aqui puedes ver una seleccion de mis proyectos.
           </p>
@@ -67,10 +69,10 @@ onBeforeUnmount(() => {
         </div>
 
         <div class="w-full">
-          <div class="relative aspect-[4/5] overflow-hidden rounded-3xl border border-black/10 bg-slate-100 shadow-xl md:aspect-[3/4] lg:aspect-square">
+          <div class="relative aspect-[4/5] overflow-hidden bg-slate-100 shadow-xl md:aspect-square lg:aspect-square">
             <img
-              src="https://api.dicebear.com/7.x/notionists/svg?seed=Jade"
-              alt="Retrato de Jade"
+              src="/imagenes/portafolio/COMICCOLOR.jpg"
+              
               class="h-full w-full object-cover"
             />
           </div>
