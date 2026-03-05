@@ -36,16 +36,7 @@ if (!project.value) router.push('/proyectos')
     <div class="grid md:grid-cols-3 gap-12 pt-8">
       <div class="md:col-span-2 space-y-6 text-lg leading-relaxed text-slate-700">
         <p>{{ project.content }}</p>
-      </div>
       
-      <div class="space-y-6">
-        <h3 class="font-bold text-xl">Tecnologías</h3>
-        <div class="flex flex-wrap gap-2">
-          <span v-for="tag in project.tags" :key="tag" 
-                class="px-3 py-1 bg-blue-100 text-pink-300 rounded-full text-sm font-semibold ">
-            {{ tag }}
-          </span>
-        </div>
       </div>
     </div>
   </article>

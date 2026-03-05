@@ -4,59 +4,58 @@ export interface Project {
   title: string;
   slug: string;
   category: string;
-  description: string;
   thumbnail: string;
   image: string;
-  tags: string[];
+  
   content: string;
 }
 
 export const projects: Project[] = [
   {
     id: '1',
-    title: 'Ilustración',
-    slug: 'eco-branding',
-    category: 'Diseño gráfico',
-    description: 'Creación de marca para una startup de productos sostenibles.',
-    thumbnail: 'https://via.placeholder.com/800x600',
-    image: 'https://via.placeholder.com/800x600', // Luego cambias por tus fotos a 72ppp
-    tags: ['Illustrator', 'Branding', 'Sostenibilidad'],
-    content: 'En este proyecto se trabajó la paleta de colores tierra y tipografías orgánicas...'
+    title: 'Cómic',
+    slug: 'ilustracion',
+    category: 'Ilustración',
+    
+    thumbnail: '/imagenes/portafolio/COMICCOLOR.jpg',
+    image: '/imagenes/portafolio/COMICCOLOR.jpg',
+    
+    content: 'Creación de comic mediante dibujo tradicional y coloreado digital.'
   },
   {
     id: '2',
     title: 'Maquetación',
-    slug: 'task-app',
-    category: 'Diseño editorial',
-    description: 'Interfaz reactiva construida con Vue 3 y Tailwind CSS.',
-    thumbnail: 'https://via.placeholder.com/800x600',
-    image: 'https://via.placeholder.com/800x600',
-    tags: ['Vue.js', 'TypeScript', 'UI/UX'],
-    content: 'El reto principal fue la gestión de estados complejos en tiempo real...'
+    slug: 'maquetacion',
+    category: 'Maquetación',
+    
+    thumbnail: '/imagenes/portafolio/ARTICULO ILUSTRACIÓN.PNG',
+    image: '/imagenes/portafolio/ARTICULO ILUSTRACIÓN.PNG',
+
+    content: 'Proyecto de maquetación de articulo, e ilustración acorde al texto. Dibujo y coloreado tradicional.'
   },
 
   {
     id: '3',
-    title: 'Digital',
-    slug: 'task-app',
-    category: 'Diseño digital',
-    description: 'Interfaz reactiva construida con Vue 3 y Tailwind CSS.',
-    thumbnail: 'https://via.placeholder.com/800x600',
+    title: 'Tipografía',
+    slug: 'digital',
+    category: 'Digital',
+   
+    thumbnail: '/imagenes/portafolio/Ilustración_sin_título 17.jpg',
     image: 'https://via.placeholder.com/800x600',
-    tags: ['Vue.js', 'TypeScript', 'UI/UX'],
+    
     content: 'El reto principal fue la gestión de estados complejos en tiempo real...'
   },
 
   {
     id: '4',
-    title: 'OTRA COSA',
-    slug: 'task-app',
-    category: '???',
-    description: 'Interfaz reactiva construida con Vue 3 y Tailwind CSS.',
+    title: 'Diseño Editorial',
+    slug: 'diseño',
+    category: 'diseño',
+    
     thumbnail: 'https://via.placeholder.com/800x600',
     image: 'https://via.placeholder.com/800x600',
-    tags: ['Vue.js', 'TypeScript', 'UI/UX'],
-    content: 'El reto principal fue la gestión de estados complejos en tiempo real...'
+    
+    content: 'Proyecto de diseño de libro ilustrado, en este caso del libro "Coraline", en el que se diseñaron tanto las ilustraciones de dentro, como la portada, contraportada y guardas.'
   }
 
 
