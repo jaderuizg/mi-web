@@ -14,6 +14,12 @@ const project = computed(() =>
   projects.find(p => p.slug === route.params.slug)
 )
 
+const projectImages = computed(() => {
+  if (!project.value) return []
+  if (project.value.images?.length) return project.value.images
+  return [project.value.image]
+})
+
 if (!project.value) router.push('/proyectos')
 </script>
 
@@ -31,7 +37,15 @@ if (!project.value) router.push('/proyectos')
       </div>
     </header>
 
-    <img :src="project.image" class="w-full aspect-video object-cover rounded-2xl shadow-2xl" />
+    <div class="space-y-4">
+      <img
+        v-for="(image, index) in projectImages"
+        :key="`${project.id}-image-${index}`"
+        :src="image"
+        :alt="`${project.title} imagen ${index + 1}`"
+        class="block h-auto max-w-full rounded-2xl shadow-2xl"
+      />
+    </div>
 
     <div class="grid md:grid-cols-3 gap-12 pt-8">
       <div class="md:col-span-2 space-y-6 text-lg leading-relaxed text-slate-700">

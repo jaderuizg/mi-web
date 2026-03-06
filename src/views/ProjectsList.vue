@@ -18,7 +18,7 @@ import { projects } from '@/data/portfolio'
         <img
           :src="project.thumbnail"
           :alt="project.title"
-          class="h-52 w-full object-cover"
+          class="block h-auto max-w-full"
         />
 
         <div class="space-y-3 p-5">

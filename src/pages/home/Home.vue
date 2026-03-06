@@ -43,15 +43,11 @@ onBeforeUnmount(() => {
         :class="[isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0']"
       >
         <div>
-          <span class="mb-6 inline-flex rounded-full border border-black/10 bg-white px-4 py-1 text-xs font-bold uppercase tracking-widest">
-            Ilustracion y Diseno
-          </span>
+          
 
           <h1 class="mb-6 text-5xl font-black leading-[0.9] tracking-tighter md:text-7xl font-helvetica">
-            PORTAFOLIO<br />
-             
-
-            <span class="text-pink-400">2026</span>
+            <span class="font-signature">PORTAFOLIO</span><br />
+            <span class="font-signature text-pink-400">JADE RUIZ</span>
           </h1>
 
           <p class="mb-8 max-w-xl text-lg font-light leading-tight text-slate-600 md:text-2xl font-helvetica">
@@ -69,11 +65,11 @@ onBeforeUnmount(() => {
         </div>
 
         <div class="w-full">
-          <div class="relative aspect-[4/5] overflow-hidden bg-slate-100 shadow-xl md:aspect-square lg:aspect-square">
+          <div class="relative aspect-auto overflow-hidden bg-slate-100 shadow-xl md:aspect-square lg:aspect-square">
             <img
-              src="/imagenes/portafolio/COMICCOLOR.jpg"
+              src="/imagenes/portafolio/Jade.jpg"
               
-              class="h-full w-full object-cover"
+              class="block h-auto max-w-full"
             />
           </div>
         </div>
@@ -88,7 +84,7 @@ onBeforeUnmount(() => {
       </div>
 
       <Carousel
-        class="mx-auto w-full max-w-5xl"
+        class="mx-auto w-full max-w-4xl"
         :items="projects.slice(0, 4)"
         :opts="{ align: 'start', loop: true }"
         @init-api="onCarouselInit"
@@ -97,14 +93,14 @@ onBeforeUnmount(() => {
           <RouterLink :to="`/proyectos/${item.slug ?? ''}`" class="group block">
             <Card class="overflow-hidden rounded-3xl border-black/10 py-0 shadow-none">
               <CardContent class="p-0">
-                <div class="relative aspect-video overflow-hidden bg-slate-100">
+                <div class="relative overflow-hidden bg-slate-100">
                   <div class="absolute inset-0 z-10 flex items-center justify-center bg-blue-600/0 transition-colors group-hover:bg-pink-600">
                     <MousePointer2 class="h-12 w-12 scale-50 text-white opacity-0 transition-all group-hover:scale-100 group-hover:opacity-100" />
                   </div>
                   <img
                     :src="item.image"
                     :alt="item.title"
-                    class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    class="block h-auto max-w-full transition-transform duration-700 group-hover:scale-105"
                   />
                
                 
@@ -118,3 +114,19 @@ onBeforeUnmount(() => {
     </section>
   </div>
 </template>
+
+<style scoped>
+@font-face {
+  font-family: "Thesignature";
+  src: url("../../assets/fonts/Thesignature.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+.font-signature {
+  font-family: "Thesignature", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+</style>
