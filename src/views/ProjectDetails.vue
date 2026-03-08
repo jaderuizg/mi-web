@@ -5,7 +5,6 @@ import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { projects } from '@/data/portfolio'
 import { Button } from '@/components/ui/button'
-import { ChevronLeft, Calendar, Tag } from 'lucide-vue-next'
 
 const route = useRoute()
 const router = useRouter()
@@ -26,15 +25,11 @@ if (!project.value) router.push('/proyectos')
 <template>
   <article v-if="project" class="max-w-4xl mx-auto space-y-8 animate-in fade-in duration-500">
     <Button variant="ghost" @click="router.back()" class="mb-4">
-      <ChevronLeft class="mr-2 h-4 w-4" /> Volver a proyectos
+      Volver a proyectos
     </Button>
 
     <header class="space-y-4">
       <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">{{ project.title }}</h1>
-      <div class="flex flex-wrap gap-4 text-slate-500 italic">
-        <span class="flex items-center gap-1"><Tag class="w-4 h-4" /> {{ project.category }}</span>
-        <span class="flex items-center gap-1"><Calendar class="w-4 h-4" /> 2026</span>
-      </div>
     </header>
 
     <div class="space-y-4">

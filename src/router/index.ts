@@ -2,6 +2,7 @@ import Home from '@/pages/home/Home.vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
 import ProjectLayout from '@/views/ProjectLayout.vue'
 import Contact from '@/views/Contact.vue'
+import InfoProfesional from '@/components/InfoProfesional.vue'
 
 export const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -31,6 +32,11 @@ export const router = createRouter({
       path: '/contacto',
       name: 'contact',
       component: Contact
+    },
+    {
+      path: '/profesional',
+      name: 'profesional',
+      component: InfoProfesional
     },
     {
       path: '/:pathMatch(.*)*',

@@ -50,18 +50,25 @@ onBeforeUnmount(() => {
             <span class="font-signature text-pink-400">JADE RUIZ</span>
           </h1>
 
-          <p class="mb-8 max-w-xl text-lg font-light leading-tight text-slate-600 md:text-2xl font-helvetica">
-            Hola, soy Jade. Estudio Diseno y Tecnologias Creativas en la UPV.
-            Aqui puedes ver una seleccion de mis proyectos.
-          </p>
+        
 
-          <RouterLink
-            to="/proyectos"
-            class="group inline-flex items-center gap-2 rounded-full bg-pink-400 px-8 py-4 font-bold text-white transition-all hover:bg-pink-600"
-          >
-            Ver mis proyectos
-            <ArrowRight class="h-5 w-5 transition-transform group-hover:translate-x-1" />
-          </RouterLink>
+          <div class="flex flex-col items-start gap-4">
+            <RouterLink
+              to="/proyectos"
+              class="group inline-flex items-center gap-2 rounded-full bg-pink-400 px-8 py-4 font-bold text-white transition-all hover:bg-pink-600"
+            >
+              Ver mis proyectos
+              <ArrowRight class="h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </RouterLink>
+
+            <RouterLink
+              to="/profesional"
+              class="group inline-flex items-center gap-2 rounded-full border border-pink-400 px-8 py-4 font-bold text-pink-500 transition-all hover:bg-pink-50"
+            >
+              Ver información profesional
+              <ArrowRight class="h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </RouterLink>
+          </div>
         </div>
 
         <div class="w-full">
@@ -103,6 +110,9 @@ onBeforeUnmount(() => {
                     class="block h-auto max-w-full transition-transform duration-700 group-hover:scale-105"
                   />
                
+                  <RouterLink to="/profesional" class="tu-clase-de-estilo">
+                 Ver Información Profesional
+                  </RouterLink>
                 
                  
                 </div>
@@ -117,15 +127,15 @@ onBeforeUnmount(() => {
 
 <style scoped>
 @font-face {
-  font-family: "Thesignature";
-  src: url("../../assets/fonts/Thesignature.ttf") format("truetype");
+  font-family: "Gaegu-Regular";
+  src: url("../../assets/fonts/Gaegu-Regular.ttf") format("truetype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
 }
 
 .font-signature {
-  font-family: "Thesignature", sans-serif;
+  font-family: "Gaegu-Regular", sans-serif;
   font-weight: 400;
   letter-spacing: 0.01em;
 }

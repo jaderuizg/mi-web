@@ -55,19 +55,19 @@ export const projects: Project[] = [
     image: '/imagenes/portafolio/Ilustracion_sin_titulo_17.jpg',
     images: [
       '/imagenes/portafolio/Ilustracion_sin_titulo_17.jpg',
-      '/imagenes/portafolio/Random.jpg',
-      '/imagenes/portafolio/Random2.jpg',
+      '/imagenes/portafolio/Ilustracion_sin_titulo_18.jpg',
+      '/imagenes/portafolio/Ilustracion_sin_titulo_19.jpg',
       '/imagenes/portafolio/Raíces_Animación.gif'
     ],
     
-    content: 'El reto principal fue la gestión de estados complejos en tiempo real...'
+    content: 'Creación de tipografia creativa para proyecto "30 days of type". Letras G, M y A.'
   },
 
   {
     id: '4',
     title: 'Diseño Editorial',
-    slug: 'diseño',
-    category: 'diseño',
+    slug: 'Diseño',
+    category: 'Diseño',
     
     thumbnail: '/imagenes/portafolio/MOCKUP PORTADA CORALINE.png',
     image: '/imagenes/portafolio/MOCKUP PORTADA CORALINE.png',
@@ -79,13 +79,45 @@ export const projects: Project[] = [
     ],
     
     content: 'Proyecto de diseño de libro ilustrado, en este caso del libro "Coraline", en el que se diseñaron tanto las ilustraciones de dentro, como la portada, contraportada y guardas.'
+  },
+
+  {
+    id: '5',
+    title: 'Carteles',
+    slug: 'Diseño',
+    category: 'Diseño',
+    
+    thumbnail: '/imagenes/portafolio/GULA FOTO.jpg',
+    image: '/imagenes/portafolio/GULA FOTO.jpg',
+    images: [
+      '/imagenes/portafolio/Cartel_Ruiz_Garcia_Jade.jpg',
+      '/imagenes/portafolio/MOCKUP DOBLE PAGINA.png',
+      '/imagenes/portafolio/GUARDAS.jpg',
+      '/imagenes/portafolio/coraline_1DA.jpeg'
+    ],
+    
+    content: 'Proyecto de diseño de libro ilustrado, en este caso del libro "Coraline", en el que se diseñaron tanto las ilustraciones de dentro, como la portada, contraportada y guardas.'
+  },
+
+  {
+    id: '6',
+    title: 'Proyectos libres',
+    slug: 'Ilustración',
+    category: 'Diseño',
+    
+    thumbnail: '/imagenes/portafolio/Random.jpg',
+    image: '/imagenes/portafolio/Random.jpg',
+    images: [
+      '/imagenes/portafolio/Random2.jpg',
+      '/imagenes/portafolio/MOCKUP DOBLE PAGINA.png',
+      '/imagenes/portafolio/GUARDAS.jpg',
+      '/imagenes/portafolio/coraline_1DA.jpeg'
+    ],
+    
+    content: 'Proyectos personales de ilustración libre, todo hecho en digital.'
   }
 
 
 ];
 
-export const education = [
-  { degree: 'Grado en Diseño y Desarrollo', center: 'Tu Universidad', year: '2022 - 2026' }
-];
 
-export const skills = ['Vue.js', 'TypeScript', 'Tailwind CSS', 'Figma', 'Git'];

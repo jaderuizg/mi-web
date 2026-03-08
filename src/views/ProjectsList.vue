@@ -22,7 +22,6 @@ import { projects } from '@/data/portfolio'
         />
 
         <div class="space-y-3 p-5">
-          <p class="text-sm font-semibold text-pink-400">{{ project.category }}</p>
           <h2 class="text-xl font-bold">{{ project.title }}</h2>
           
 
