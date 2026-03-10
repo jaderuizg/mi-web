@@ -7,16 +7,15 @@ import { Send } from 'lucide-vue-next'
 const formData = ref({ name: '', email: '', message: '' })
 
 const sendForm = () => {
-  // Aquí iría tu lógica de TypeScript
-  alert(`Gracias ${formData.value.name}, mensaje enviado.`);
-  formData.value = { name: '', email: '', message: '' };
+  alert(`Gracias ${formData.value.name}, mensaje enviado.`)
+  formData.value = { name: "", email: "", message: "" }
 }
 </script>
 
 <template>
   <div class="max-w-xl mx-auto bg-white p-10 rounded-3xl shadow-sm border">
-    <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
-      ¡Contacta conmigo! <Send class="text-pink-300" />
+    <h2 class="text-3xl font-bold mb-8 flex items-center gap-3 font-gaegu">
+      Contacta conmigo! <Send class="text-pink-300" />
     </h2>
     <form @submit.prevent="sendForm" class="space-y-6">
       <div class="space-y-2">

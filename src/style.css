@@ -120,3 +120,11 @@
     @apply bg-background text-foreground font-sans;
   }
 }
+
+/* Soft pink polka-dot background reused across the app. */
+.bg-polka {
+  background-color: #ffeef7;
+  background-image: radial-gradient(#f7a8cd 6px, transparent 6px);
+  background-size: 36px 36px;
+  background-position: 0 0, 18px 18px;
+}

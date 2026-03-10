@@ -155,11 +155,11 @@ onBeforeUnmount(() => {
             name="slide"
             :item="item"
           >
-            <div class="relative aspect-video overflow-hidden rounded-3xl bg-slate-100">
+            <div class="bg-polka relative aspect-[4/3] overflow-hidden rounded-3xl">
               <img
                 :src="item.image"
                 :alt="item.alt ?? item.title ?? 'Slide image'"
-                class="h-full w-full object-cover"
+                class="block h-full w-full object-cover object-center"
               />
             </div>
           </slot>
